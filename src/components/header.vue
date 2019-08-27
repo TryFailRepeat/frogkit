@@ -11,7 +11,7 @@
     <div class="fk-header__container">
       <!-- logo -->
       <h1 class="fk-header__logo">
-        <a :href="logoUrl" aria-label="home"><img src="../assets/logo.svg" alt="smartfrog-logo" /></a>
+        <a :href="logoUrl" aria-label="home"><img :src="logoImageSrc" :alt="logoAlt" /></a>
       </h1>
       <!-- burger menu icon -->
       <span class="fk-header__toggle" @click="mobileNavOpen = !mobileNavOpen">
@@ -118,6 +118,14 @@
       registrationLink: {
         type: String,
         default: ''
+      },
+      logoImageSrc: {
+        type: String,
+        default: require('../assets/logo.svg')
+      },
+      logoAlt: {
+        type: String,
+        default: 'smartfrog-logo'
       }
     },
     data() {
