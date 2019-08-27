@@ -21,7 +21,12 @@ const formItems = {
   registerLabel: 'Noch kein Benutzerkonto?',
   registerUrl: 'https://www.smartfrog.com//de-de/shop/register',
   retriveLabel: 'Passwort vergessen?',
-  retriveUrl: '/de-de/shop/resetpassword'
+  retriveUrl: '/de-de/shop/resetpassword',
+  submitText: 'Login',
+  loginLink: 'https://app.smartfrog.com/de-de/login',
+  shopText: 'Shop',
+  shopLink: 'https://www.smartfrog.com/de-de/shop/products',
+  cartLink: 'https://www.smartfrog.com/de-de/shop/cart'
 }
 
 stories.addCodeExampleStory('Kitchen Sink', () => ({
