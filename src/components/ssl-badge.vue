@@ -6,7 +6,7 @@
 
 <template>
   <Flex align="center" class="fk-ssl-badge">
-      <img class="fk-ssl-badge__img" :class="{'fk-ssl-badge__img--small' : !!small}" src="../assets/images/ssl.png" />
+      <img class="fk-ssl-badge__img" :class="{'fk-ssl-badge__img--small' : !!small}" :src="badgeImageSrc"  />
       <div class="fk-ssl-badge__text" :class="{'fk-ssl-badge__text--small' : !!small}">{{text}}<slot></slot></div>
   </Flex>
 </template>
@@ -22,7 +22,11 @@
       small: {
         type: Boolean,
         default: false
-      }
+      },
+      badgeImageSrc: {
+        type: String,
+        default: require('../assets/images/ssl.png')
+      },
     }
   }
 </script>
