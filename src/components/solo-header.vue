@@ -10,7 +10,7 @@
   <header class="solo-header">
     <div class="solo-header__container">
       <h1 class="solo-header__container__logo">
-        <a :href="props.logoUrl"><img :src="logoImageSrc" :alt="logoAlt" /></a>
+        <a :href="props.logoUrl"><img :src="props.logoImageSrc" :alt="props.logoAlt" /></a>
       </h1>
     </div>
   </header>
