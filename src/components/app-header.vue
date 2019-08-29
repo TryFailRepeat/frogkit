@@ -115,11 +115,11 @@ import clickOutside from '../directives/click-outside'
         default: () => []
       },
       logoIcon: {
-        type: string,
+        type: String,
         default: 'logo-small'
       },
       cameraIcon: {
-        type: string,
+        type: String,
         default: 'camera'
       },
     },
