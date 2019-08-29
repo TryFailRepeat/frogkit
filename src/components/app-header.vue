@@ -15,7 +15,7 @@
           <!-- logo -->
           <h1 class="fk-app-header__logo" pid="header_button_home">
             <a :href="logoUrl" aria-label="app">
-              <Icon icon="logo-small" />
+              <Icon :icon="logoIcon" />
             </a>
           </h1>
           <!-- navigation -->
@@ -23,7 +23,7 @@
             <!-- all cameras -->
             <div class="fk-app-header__cam" pid="header_button_all_cameras">
               <a v-if="navigations[0]" :href="navigations[0].url" :aria-label="navigations[0].label">
-                <Icon icon="camera" :alt="navigations[0].label" /> {{ navigations[0].label }}</a>
+                <Icon :icon="cameraIcon" :alt="navigations[0].label" /> {{ navigations[0].label }}</a>
               <div class="fk-app-header__cam__nav">
                 <!-- <ul>
                 <li>
@@ -113,7 +113,15 @@ import clickOutside from '../directives/click-outside'
       languages: {
         type: Array,
         default: () => []
-      }
+      },
+      logoIcon: {
+        type: string,
+        default: 'logo-small'
+      },
+      cameraIcon: {
+        type: string,
+        default: 'camera'
+      },
     },
     data() {
       return {
