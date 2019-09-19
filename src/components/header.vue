@@ -33,7 +33,7 @@
       <!-- login form -->
       <Flex v-if="!navOnly" grow justify="end" align="center">
         <!-- country selector -->
-        <CountrySelector v-if="countries.length"
+        <CountrySelector v-if="countries.length > 1"
           :countries="countries"
           :currentCountry="currentCountry"
           :selectLabel="countrySelectLabel"

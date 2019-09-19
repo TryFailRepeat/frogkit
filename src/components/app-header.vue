@@ -25,23 +25,6 @@
               <a v-if="navigations[0]" :href="navigations[0].url" :aria-label="navigations[0].label">
                 <Icon :icon="cameraIcon" :alt="navigations[0].label" /> {{ navigations[0].label }}</a>
               <div class="fk-app-header__cam__nav">
-                <!-- <ul>
-                <li>
-                  <a href="#" class="selected">Overview</a>
-                </li>
-                <li>
-                  <a href="#">Saved videoclips</a>
-                </li>
-                <li>
-                  <a href="#">Alerts and events</a>
-                </li>
-                <li>
-                  <a href="#">Connect Smartfrog Cam</a>
-                </li>
-                <li>
-                  <a href="#">Connect webcam</a>
-                </li>
-              </ul> -->
               </div>
             </div>
             <!-- my account -->
@@ -51,6 +34,14 @@
             <Button v-if="navigations[2]" link color="secondary" size="small" class="fk-app-header__btn-shop" :href="navigations[2].url" pid="header_button_shop" :aria-label="navigations[2].label">
               {{ navigations[2].label }}
             </Button>
+
+            <!-- cart button 
+            <Button link color="secondary" size="small" class="fk-app-header__cart" :href="navigations[3].url" aria-label="cart">
+                <Icon icon="basket" alt="cart"/>
+                <span v-if="cartCounter > 0" class="fk-header__btn-cart__counter">{{ cartCounter }}</span>
+            </Button>
+            -->
+
             <!-- current user -->
             <div class="fk-app-header__user">
               <span>{{ username }}</span>
@@ -70,10 +61,6 @@
               </ul>
             </div>
           </nav>
-          <!-- burger menu icon -->
-          <!-- <span class="fk-app-header__toggle">
-          <Icon icon="hamburger-menu" />
-        </span> -->
         </div>
       </header>
       </Col>
@@ -82,65 +69,69 @@
 </template>
 
 <script>
-import clickOutside from '../directives/click-outside'
+    import clickOutside from '../directives/click-outside'
 
-  export default {
-    name: 'AppHeader',
-    directives: {
-      clickOutside
-    },
-    props: {
-      logoUrl: {
-        type: String,
-        default: '/'
-      },
-      navigations: {
-        type: Array,
-        default: () => []
-      },
-      username: {
-        type: String,
-        default: '',
-      },
-      activeLang: {
-        type: String,
-        default: '',
-      },
-      logoutlabel: {
-        type: String,
-        rdefault: '',
-      },
-      languages: {
-        type: Array,
-        default: () => []
-      },
-      logoIcon: {
-        type: String,
-        default: 'logo-small'
-      },
-      cameraIcon: {
-        type: String,
-        default: 'camera'
-      },
-    },
-    data() {
-      return {
-        toggleLangList: false
-      }
-    },
-    methods: {
-      logout () {
-        this.$emit('logout')
-      },
-      changeLang (langCode) {
-        this.$emit('changeLanguage', langCode)
-      },
-      toggleDropdown() {
-        this.toggleLangList = !this.toggleLangLis
-      },
-      closeDropDown() {
-        this.toggleLangList = false
-      }
+    export default {
+        name: 'AppHeader',
+        directives: {
+            clickOutside
+        },
+        props: {
+            logoUrl: {
+                type: String,
+                default: '/'
+            },
+            navigations: {
+                type: Array,
+                default: () => []
+            },
+            username: {
+                type: String,
+                default: ''
+            },
+            activeLang: {
+                type: String,
+                default: ''
+            },
+            logoutlabel: {
+                type: String,
+                rdefault: ''
+            },
+            languages: {
+                type: Array,
+                default: () => []
+            },
+            logoIcon: {
+                type: String,
+                default: 'logo-small'
+            },
+            cameraIcon: {
+                type: String,
+                default: 'camera'
+            },
+            cartCounter: {
+                type: Number,
+                default: 0
+            }
+        },
+        data() {
+            return {
+                toggleLangList: false
+            }
+        },
+        methods: {
+            logout () {
+                this.$emit('logout')
+            },
+            changeLang (langCode) {
+                this.$emit('changeLanguage', langCode)
+            },
+            toggleDropdown() {
+                this.toggleLangList = !this.toggleLangLis
+            },
+            closeDropDown() {
+                this.toggleLangList = false
+            }
+        }
     }
-  }
 </script>
