@@ -33,7 +33,7 @@
       <!-- login form -->
       <Flex v-if="!navOnly" grow justify="end" align="center">
         <!-- country selector -->
-        <CountrySelector v-if="countries.length"
+        <CountrySelector v-if="countries.length > 1"
           :countries="countries"
           :currentCountry="currentCountry"
           :selectLabel="countrySelectLabel"
@@ -42,11 +42,11 @@
           @change="countryChange" />
         <form class="fk-header__form" @submit.prevent="login">
            <div class="fk-header__form__field">
-              <Input v-model="email" name="email" type="email" size="small" :wrong="wrongInput" :placeholder="formItems.emailPlaceholder" :aria-label="formItems.emailPlaceholder" pid="header.email"></Input>
+              <Input v-model="email" name="email" type="email" size="small" :wrong="wrongInput" :placeholder="formItems.emailPlaceholder" :aria-label="formItems.emailPlaceholder" pid="header.email" tabindex="1"></Input>
               <a :href="formItems.registerUrl" :aria-label="formItems.registerLabel">{{ formItems.registerLabel }}</a>
             </div>
              <div class="fk-header__form__field">
-                <Input v-model="password" name="password" type="password" size="small" :wrong="wrongInput" :placeholder="formItems.passwordPlaceholder" :aria-label="formItems.passwordPlaceholder" pid="header.password"></Input>
+                <Input v-model="password" name="password" type="password" size="small" :wrong="wrongInput" :placeholder="formItems.passwordPlaceholder" :aria-label="formItems.passwordPlaceholder" pid="header.password" tabindex="2"></Input>
                 <a :href="formItems.retriveUrl" :aria-label="formItems.retriveLabel">{{ formItems.retriveLabel }}</a>
             </div>
             <Button type="submit" color="primary" size="small" class="fk-header__form__login" pid="header.loginbutton">
