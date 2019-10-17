@@ -3,7 +3,7 @@
     <img :width="width" src="../assets/images/iso-27001.jpg" alt="iso-27001" />
     <img :width="width" src="../assets/images/tuev.jpg" alt="tuev" />
     <img :width="width" src="../assets/images/iso-9001.jpg" alt="iso-9001" />
-    <img :width="width" src="../assets/images/av-test.svg" alt="av-test" />
+    <img v-if="avtest" :width="width" src="../assets/images/av-test.svg" alt="av-test" />
   </Flex>
 </template>
 
@@ -14,6 +14,10 @@
       width:{
         type: String,
         default: '65px'
+      },
+      avtest: {
+        type: Boolean,
+        default: true
       }
     }
   }
