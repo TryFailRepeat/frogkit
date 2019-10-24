@@ -19,16 +19,16 @@
       </span>
       <!-- navigation -->
         <nav class="fk-header__nav" :class="{ 'fk-header__nav--on': mobileNavOpen }">
-          <ul>
-            <!-- main links -->
-            <li v-for="item in navMainItems">
-              <a :href="item.url">{{ item.label }}</a>
-            </li>
-            <!-- links visible only on mobile -->
-            <li v-if="!navOnly && !item.hideInNav" v-for="item in navExtraItems">
-              <a :href="item.url">{{ item.label }}</a>
-            </li>
-          </ul>
+            <ul>
+                <!-- main links -->
+                <li class="fk-header__nav-item" v-for="item in navMainItems">
+                    <a :href="item.url">{{ item.label }}</a>
+                </li>
+                <!-- links visible only on mobile -->
+                <li class="fk-header__nav-item fk-header__nav-item--mobile" v-if="!navOnly" v-for="item in navExtraItems">
+                    <a :href="item.url">{{ item.label }}</a>
+                </li>
+            </ul>
         </nav>
       <!-- login form -->
       <Flex v-if="!navOnly" grow justify="end" align="center">
