@@ -21,7 +21,7 @@
         <nav class="fk-header__nav" :class="{ 'fk-header__nav--on': mobileNavOpen }">
             <ul>
                 <!-- main links -->
-                <li class="fk-header__nav-item" v-for="item in navMainItems">
+                <li class="fk-header__nav-item" :class="{ 'fk-header__nav-item--mobile': item.hideInNav }" v-for="item in navMainItems">
                     <a :href="item.url">{{ item.label }}</a>
                 </li>
                 <!-- links visible only on mobile -->
