@@ -20,6 +20,7 @@ export default {
 'film-play': () => import(/* webpackChunkName:  "film-play-icon" */ './film-play.vue').then(m => m.default || m),
 'google-plus': () => import(/* webpackChunkName:  "google-plus-icon" */ './google-plus.vue').then(m => m.default || m),
 'hamburger-menu': () => import(/* webpackChunkName:  "hamburger-menu-icon" */ './hamburger-menu.vue').then(m => m.default || m),
+'hikam-cam': () => import(/* webpackChunkName:  "hikam-cam-icon" */ './hikam-cam.vue').then(m => m.default || m),
 'hikam-logo': () => import(/* webpackChunkName:  "hikam-logo-icon" */ './hikam-logo.vue').then(m => m.default || m),
 'info-circle': () => import(/* webpackChunkName:  "info-circle-icon" */ './info-circle.vue').then(m => m.default || m),
 'info': () => import(/* webpackChunkName:  "info-icon" */ './info.vue').then(m => m.default || m),
